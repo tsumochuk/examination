@@ -13,6 +13,17 @@ framework:
         cookie_secure: auto
         cookie_samesite: lax
 
+    http_client:
+        default_options:
+            retry_failed:
+                # only retry errors with these HTTP codes
+                http_codes:
+                    429: true
+                max_retries: 5
+                delay: 5000
+                multiplier: 3
+                max_delay: 7000
+
     #esi: true
     #fragments: true
     php_errors:

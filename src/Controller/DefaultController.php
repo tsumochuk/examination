@@ -1,19 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DummyController extends AbstractController
+final class DefaultController extends AbstractController
 {
-    #[Route('/', name: 'home')]
+    #[Route('/')]
     public function index(): JsonResponse
     {
         return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/DummyController.php',
+            'Please read the README file.'
         ]);
     }
 }
